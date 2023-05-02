@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dialog Test 1</title>
+  <style>
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 9;
+    }
+
+    .modal.open,
+    .overlay.open {
+      display: block;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      padding: 0.5rem;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      background: white;
+      border-radius: 0.25rem;
+      z-index: 10;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Dialog Test 1</h1>
+  <button id="open">Open</button>
+  <div class="overlay">
+    <div class="modal">
+      <button id="close">Close</button>
+    </div>
+  </div>
+  <script>
+    const openBtn = document.querySelector("#open");
+    const closeBtn = document.querySelector("#close");
+    const overlay = document.querySelector(".overlay");
+    const modal = document.querySelector(".modal");
+
+    closeBtn.addEventListener("click", () => {
+      overlay.classList.remove("open");
+      modal.classList.remove("open");
+    });
+
+    openBtn.addEventListener("click", () => {
+      overlay.classList.add("open");
+      modal.classList.add("open");
+    });
+  </script>
+</body>
+
+</html>

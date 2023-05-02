@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dialog Test 2</title>
+</head>
+
+<body>
+  <h1>Dialog Test 2</h1>
+  <button id="open">Open</button>
+  <dialog id="modal">
+    <button id="close">Close</button>
+  </dialog>
+  <script>
+    const openBtn = document.querySelector("#open");
+    const closeBtn = document.querySelector("#close");
+    const modal = document.querySelector("#modal");
+
+    closeBtn.addEventListener("click", () => {
+      modal.close();
+    });
+
+    openBtn.addEventListener("click", () => {
+      console.log("open");
+      modal.showModal();
+    });
+  </script>
+</body>
+
+</html>
